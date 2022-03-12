@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{% set b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] %}
+    {% if ol_ul == "ul" %}
+        {% for i in b %}
+            <ul><li>{{i}}</li></ul>
+        {% endfor %}
+    {%elif ol_ul == "ol"%}
+        {% for i in b %}
+            <ol><li>{{i}}</li></ol>
+        {% endfor %}
+    {%else%}
+    <h2>Не верный формат ввода</h2>
+    {% endif %}
+
+</h1>
+{% endblock %}

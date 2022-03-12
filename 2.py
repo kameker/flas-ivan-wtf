@@ -8,12 +8,11 @@ def main():
     app.run()
 
 
-@app.route('/training/<prof>')
-def training(prof):
+@app.route('/list_prof/<args>')
+def list_prof(args):
     param = {}
-    param['title'] = prof
-    param['typet'] = prof
-    return render_template('typeT.html', **param)
+    param['ol_ul'] = args
+    return render_template('ol_ul.html', **param)
 
 
 if __name__ == '__main__':
