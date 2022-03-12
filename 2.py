@@ -8,7 +8,6 @@ def main():
     app.run()
 
 
-@app.route('/')
 @app.route('/training/<prof>')
 def training(prof):
     param = {}
