@@ -8,8 +8,9 @@
             <ul><li>{{i}}</li></ul>
         {% endfor %}
     {%elif ol_ul == "ol"%}
+    {%set a = 1%}
         {% for i in b %}
-            <ol><li>{{i}}</li></ol>
+            <h1>{{ loop.index }} {{i}}</h1>
         {% endfor %}
     {%else%}
     <h2>Не верный формат ввода</h2>
