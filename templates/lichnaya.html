@@ -2,7 +2,15 @@
 
 {% block content %}
 <h1>
-    <div><img src={{member}} alt="здесь должна была быть картинка, но не нашлась"></div>
-    <div>{{proflist}}</div>
+    <div>
+        {%  set ran = ["1", "2", "3"] | random %}
+        {% set a = list_[ran] %}
+        <h3>{{ a[0] }}  {{ a[1] }}</h3>
+        <img src="{{a[2]}}" style="width:50%;">
+        {% for speciality in a[3].split(",") | sort%}
+        <h5>{{ speciality }}</h5>
+        {% endfor %}
+    </div>
 </h1>
 {% endblock %}
+

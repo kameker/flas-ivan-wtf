@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from json import load
+from json import loads
 from random import sample
 
 app = Flask(__name__)
@@ -19,14 +19,9 @@ def list_prof(args):
 
 @app.route('/member')
 def member():
-    with open('templates/data_members.json',encoding='UTF8') as inf:
-        d = load(inf)
-        random_member = sample([d[i] for i in d], 1)[0]
-        proflist = ' '.join(sorted([i for i in random_member[3].split(',')], key=lambda x: x))
-    param = {}
-    param['member'] = random_member[2]
-    param['proflist'] = proflist
-    return render_template('lichnaya.html', **param)
+    with open("templates/data_members.json", "rt", encoding="utf8") as f:
+        list_ = loads(f.read())
+    return render_template('lichnaya.html', list_=list_)
 
 
 if __name__ == '__main__':
