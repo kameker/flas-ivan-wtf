@@ -19,9 +19,11 @@ def list_prof(args):
 
 @app.route('/member')
 def member():
+    param = {}
     with open("templates/data_members.json", "rt", encoding="utf8") as f:
-        list_ = loads(f.read())
-    return render_template('lichnaya.html', list_=list_)
+        data = loads(f.read())
+        param['data'] = data
+    return render_template('lichnaya.html', **param)
 
 
 if __name__ == '__main__':

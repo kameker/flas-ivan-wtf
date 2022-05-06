@@ -4,7 +4,7 @@
 <h1>
     <div>
         {%  set ran = ["1", "2", "3"] | random %}
-        {% set a = list_[ran] %}
+        {% set a = data[ran] %}
         <h3>{{ a[0] }}  {{ a[1] }}</h3>
         <img src="{{a[2]}}" style="width:50%;">
         {% for speciality in a[3].split(",") | sort%}
