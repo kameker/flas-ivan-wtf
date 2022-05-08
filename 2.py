@@ -44,10 +44,17 @@ def login():
     return render_template('login.html', title='Аварийный доступ', form=form)
 
 
-
 @app.route('/norm')
 def success():
     return render_template('success.html', title='Успешная авторизация')
+
+
+@app.route('/distribution')
+def index():
+    param = {}
+    sp = ['Ридли Скотт', 'Энди Уир', 'Марк Уотни', 'Венката Капур', 'Тедди Сандерс', 'Шон Бин']
+    param['sp'] = sp
+    return render_template('index.html', **param)
 
 
 if __name__ == '__main__':
